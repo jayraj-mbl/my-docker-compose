@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  web_one:
+    image: nginx:alpine
+    container_name: nginx_container_one
+    ports:
+      - "8081:80"
+    volumes:
+      - ./web1/index.html:/usr/share/nginx/html/index.html:ro
+
+  web_two:
+    image: nginx:alpine
+    container_name: nginx_container_two
+    ports:
+      - "8082:80"
+    volumes:
+      - ./web2/index.html:/usr/share/nginx/html/index.html:ro
